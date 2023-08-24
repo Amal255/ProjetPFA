@@ -1,0 +1,280 @@
+
+<section class="bg-white">
+  <div class="container-lg">
+   
+    <div class="big-container">
+      <div class="left-container cont1">
+
+      <h3>Comment pouvons-nous vous aider ?</h3>
+      <h4><a href="/faq/#about">À propos de la société</a></h4>
+      <h4><a href="/faq/#water">Engagement éthique</a></h4>
+      <h4><a href="/faq/#greywater">Commandes et paiements</a></h4>
+      <h4><a href="/faq/#purchasing">Ingrédients et Produits</a></h4>
+      <h4><a href="/faq/#installation">Utilisation et Application</a></h4>
+      <h4><a href="/faq/#health">Sécurité et Allergènes</a></h4>
+    </div>
+
+
+      
+      
+          <div class="right-container cont2">
+            <div class="scrollable-content">
+              <div class="div-title">
+                <h2>Questions fréquemment posées</h2>
+                <p></p>
+            </div>
+            <div class="container">
+              <h3 id="about">À propos de la société :</h3>
+              <div class="accordion">
+                <div class="accordion-item">
+                  <button id="accordion-button-1" [attr.aria-expanded]="isAccordionExpanded['accordion-button-1'] ? 'true' : 'false'" (click)="toggleAccordion('accordion-button-1')">
+                    <span class="accordion-title">Qu'est-ce que Acila by Cartajlife ?</span>
+                    <span class="icon" aria-hidden="true"></span>
+                  </button>
+                  <div class="accordion-content" [ngClass]="{'expanded': isAccordionExpanded['accordion-button-1']}">
+                    <p>
+                      Acila by Cartajlife est une entreprise tunisienne spécialisée dans la vente de produits cosmétiques naturels et bio. Nous proposons une gamme soigneusement sélectionnée de produits de beauté qui respectent votre peau et l'environnement.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion">
+                <div class="accordion-item">
+                  <button id="accordion-button-2" [attr.aria-expanded]="isAccordionExpanded['accordion-button-2'] ? 'true' : 'false'" (click)="toggleAccordion('accordion-button-2')">
+                    <span class="accordion-title">D'où proviennent vos ingrédients ?</span>
+                    <span class="icon" aria-hidden="true"></span>
+                  </button>
+                  <div class="accordion-content" [ngClass]="{'expanded': isAccordionExpanded['accordion-button-2']}">
+                    <p>
+                      Nous nous approvisionnons en ingrédients naturels et bio provenant de sources durables. Notre engagement envers la qualité signifie que nous choisissons des ingrédients de la plus haute qualité pour nos produits.
+      
+                    </p>
+                  </div>
+                </div>
+              </div> <div class="accordion">
+                <div class="accordion-item">
+                  <button id="accordion-button-3" [attr.aria-expanded]="isAccordionExpanded['accordion-button-3'] ? 'true' : 'false'" (click)="toggleAccordion('accordion-button-3')">
+                    <span class="accordion-title">Qu'est-ce qui rend vos produits différents ?</span>
+                    <span class="icon" aria-hidden="true"></span>
+                  </button>
+                  <div class="accordion-content" [ngClass]="{'expanded': isAccordionExpanded['accordion-button-3']}">
+                    <p>
+                      Nos produits se distinguent par leur concentration en ingrédients naturels et bio, ainsi que par notre engagement envers la transparence et la durabilité. Nous privilégions la qualité et la performance pour vous offrir une expérience de beauté authentique.
+                    </p>
+                  </div>
+                </div>
+              </div>
+      
+              <h3 id="water">Engagement éthique : </h3>
+              <div class="accordion">
+                <div class="accordion-item">
+                  <button id="accordion-button-4" [attr.aria-expanded]="isAccordionExpanded['accordion-button-4'] ? 'true' : 'false'" (click)="toggleAccordion('accordion-button-4')">
+                    <span class="accordion-title">Quelle est votre politique de retour ?</span>
+                    <span class="icon" aria-hidden="true"></span>
+                  </button>
+                  <div class="accordion-content" [ngClass]="{'expanded': isAccordionExpanded['accordion-button-4']}">
+                    <p>
+                      Nous voulons que vous soyez satisfait de vos achats. Si vous n'êtes pas entièrement satisfait de votre produit, veuillez consulter notre politique de retour sur notre page dédiée aux retours.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion">
+                <div class="accordion-item">
+                  <button id="accordion-button-5" [attr.aria-expanded]="isAccordionExpanded['accordion-button-5'] ? 'true' : 'false'" (click)="toggleAccordion('accordion-button-5')">
+                    <span class="accordion-title">Comment puis-je vous contacter en cas de questions supplémentaires ?</span>
+                    <span class="icon" aria-hidden="true"></span>
+                  </button>
+                  <div class="accordion-content" [ngClass]="{'expanded': isAccordionExpanded['accordion-button-5']}">
+                    <p>
+                      Vous pouvez nous contacter par e-mail à [adresse e-mail] ou par téléphone au [numéro de téléphone]. Nous sommes là pour répondre à toutes vos questions et préoccupations.
+      
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              
+              
+              <h3 id="greywater">Commandes et paiements : </h3>
+              <div class="accordion">
+                <div class="accordion-item">
+                  <button id="accordion-button-9" [attr.aria-expanded]="isAccordionExpanded['accordion-button-9'] ? 'true' : 'false'" (click)="toggleAccordion('accordion-button-9')">
+                    <span class="accordion-title">Comment puis-je passer une commande ? </span>
+                    <span class="icon" aria-hidden="true"></span>
+                  </button>
+                  <div class="accordion-content" [ngClass]="{'expanded': isAccordionExpanded['accordion-button-9']}">
+                    <p>
+                      Vous pouvez facilement passer une commande sur notre site web en ajoutant les produits souhaités à votre panier et en suivant les étapes de paiement. Si vous avez des questions, n'hésitez pas à nous contacter.
+                    </p>
+                  </div>
+                </div>
+              </div>
+      
+            
+            <div class="accordion">
+              <div class="accordion-item">
+                <button id="accordion-button-11" [attr.aria-expanded]="isAccordionExpanded['accordion-button-11'] ? 'true' : 'false'" (click)="toggleAccordion('accordion-button-11')">
+                  <span class="accordion-title">Quels modes de paiement acceptez-vous ?</span>
+                  <span class="icon" aria-hidden="true"></span>
+                </button>
+                <div class="accordion-content" [ngClass]="{'expanded': isAccordionExpanded['accordion-button-11']}">
+                  <p>
+                    Nous acceptons les principales cartes de crédit et les paiements en ligne sécurisés. Toutes les transactions sont traitées de manière confidentielle.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="accordion">
+              <div class="accordion-item">
+                <button id="accordion-button-13" [attr.aria-expanded]="isAccordionExpanded['accordion-button-13'] ? 'true' : 'false'" (click)="toggleAccordion('accordion-button-13')">
+                  <span class="accordion-title">Comment puis-je suivre ma commande ?</span>
+                  <span class="icon" aria-hidden="true"></span>
+                </button>
+                <div class="accordion-content" [ngClass]="{'expanded': isAccordionExpanded['accordion-button-13']}">
+                  <p>
+                    Une fois que votre commande est expédiée, nous vous enverrons un e-mail de confirmation avec les détails de suivi. Vous pourrez ainsi suivre l'évolution de votre colis.
+      
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            
+            <h3 id="purchasing">Ingrédients et Produits :</h3>
+            <div class="accordion">
+              <div class="accordion-item">
+                <button id="accordion-button-19" [attr.aria-expanded]="isAccordionExpanded['accordion-button-19'] ? 'true' : 'false'" (click)="toggleAccordion('accordion-button-19')">
+                  <span class="accordion-title">Quels types de produits proposez-vous dans votre gamme cosmétique ?</span>
+                  <span class="icon" aria-hidden="true"></span>
+                </button>
+                <div class="accordion-content" [ngClass]="{'expanded': isAccordionExpanded['accordion-button-19']}">
+                  <p>
+                    Dracoss Tap Water Filters are designed with safety as our highest priority. The filters are composed of materials that are safe for contact with drinking water. Furthermore, they effectively remove impurities and harmful contaminants from your tap water. However, they should be used and maintained as per the instructions provided to ensure their efficacy. If you have a specific health concern or condition, it's always a good idea to consult with your healthcare provider.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion-item">
+                <button id="accordion-button-20" [attr.aria-expanded]="isAccordionExpanded['accordion-button-20'] ? 'true' : 'false'" (click)="toggleAccordion('accordion-button-20')">
+                  <span class="accordion-title">Vos produits sont-ils certifiés bio ? </span>
+                  <span class="icon" aria-hidden="true"></span>
+                </button>
+                <div class="accordion-content" [ngClass]="{'expanded': isAccordionExpanded['accordion-button-20']}">
+                  <p>
+                    Dracoss filters are designed to remove a wide range of common contaminants found in tap water, including chlorine, heavy metals such as lead, and microbial contaminants like bacteria. Our filters use advanced filtration technologies to ensure that your water is safe and healthy for consumption. However, it's important to note that while our filters are highly effective, no filter can remove 100% of all possible contaminants, especially those at very low levels.
+      For contaminants like certain industrial chemicals or pharmaceuticals, which might be present in some water sources, specific filtration methods may be required. If you're concerned about a specific contaminant in your local water supply, we recommend you get your water tested. Once you have the results, our customer service team would be more than happy to help you understand whether our filters are the right solution for you.
+      
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion-item">
+                <button id="accordion-button-21" [attr.aria-expanded]="isAccordionExpanded['accordion-button-21'] ? 'true' : 'false'" (click)="toggleAccordion('accordion-button-21')">
+                  <span class="accordion-title">Quels sont les avantages des produits cosmétiques naturels et bio ?
+                  </span>
+                  <span class="icon" aria-hidden="true"></span>
+                </button>
+                <div class="accordion-content" [ngClass]="{'expanded': isAccordionExpanded['accordion-button-21']}">
+                  <p>
+                    At Dracoss, ensuring the quality of our filtered water is a top priority. Our filtration system has been thoroughly tested and certified to meet CE standards, an internationally recognized certification that ensures the safety, health, and environmental protection standards of products sold within the European Economic Area (EEA).
+                    The CE certification means our filters have passed stringent quality control checks and have been found to effectively reduce contaminants commonly found in tap water. This includes substances like chlorine, heavy metals, and various microorganisms, making the water safer and better tasting.
+                    In addition, we have a robust quality assurance process in place to regularly monitor and test our products. This includes regular third-party lab testing to verify our filters' performance and ensure they continue to meet or exceed the high standards we've set.
+                    It's our commitment at Dracoss to deliver safe, clean, and high-quality drinking water to all our customers. We're confident in the effectiveness of our filters and stand by our certification and testing processes.
+                    
+                  </p>
+                </div>
+              </div>
+            </div>
+      
+      
+      
+      
+      
+      
+            <!-- Ajoutez les autres questions et réponses ici -->
+            <h3 id="installation">Utilisation et Application :</h3>
+            <div class="accordion">
+              <div class="accordion-item">
+                <button id="accordion-button-22" [attr.aria-expanded]="isAccordionExpanded['accordion-button-22'] ? 'true' : 'false'" (click)="toggleAccordion('accordion-button-22')">
+                  <span class="accordion-title">Les produits conviennent-ils à tous les types de peau ?</span>
+                  <span class="icon" aria-hidden="true"></span>
+                </button>
+                <div class="accordion-content" [ngClass]="{'expanded': isAccordionExpanded['accordion-button-22']}">
+                  <p>
+                    Our environmental policy focuses on responsible use of resources, waste reduction, and promoting environmental awareness among our customers and employees. We are committed to continuous improvements in our environmental performance, complying with all relevant legal requirements, and preventing pollution whenever possible. Dracoss is currently exploring ways to further decrease our environmental footprint.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Ajoutez les autres questions et réponses ici -->
+            
+            <div class="accordion">
+              <div class="accordion-item">
+                <button id="accordion-button-23" [attr.aria-expanded]="isAccordionExpanded['accordion-button-23'] ? 'true' : 'false'" (click)="toggleAccordion('accordion-button-23')">
+                  <span class="accordion-title">Avez-vous des recommandations pour une routine de soins de la peau ?</span>
+                  <span class="icon" aria-hidden="true"></span>
+                </button>
+                <div class="accordion-content" [ngClass]="{'expanded': isAccordionExpanded['accordion-button-23']}">
+                  <p>
+                    At Dracoss, we're passionate about making a positive impact on the environment. Our water tap filters aim to reduce the number of plastic water bottles used, thereby contributing to less plastic waste. We've also incorporated sustainable practices in our supply chain and are constantly working on initiatives to offset our carbon emissions.
+                  </p>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Ajoutez les autres questions et réponses ici -->
+            <h3 id="health">Sécurité et Allergènes :</h3>
+            <div class="accordion">
+              <div class="accordion-item">
+                <button id="accordion-button-24" [attr.aria-expanded]="isAccordionExpanded['accordion-button-24'] ? 'true' : 'false'" (click)="toggleAccordion('accordion-button-24')">
+                  <span class="accordion-title">Vos produits peuvent-ils causer des réactions allergiques ?</span>
+                  <span class="icon" aria-hidden="true"></span>
+                </button>
+                <div class="accordion-content" [ngClass]="{'expanded': isAccordionExpanded['accordion-button-24']}">
+                  <p>
+                    Yes, we have designed our filters to be environmentally friendly. The plastic components of our filter are recyclable, and the activated carbon used in the filter is biodegradable. We encourage users to separate these components and dispose of them correctly at the end of the filter's lifespan.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+             <!-- Ajoutez les autres questions et réponses ici -->
+          
+             <div class="accordion">
+               <div class="accordion-item">
+                 <button id="accordion-button-24" [attr.aria-expanded]="isAccordionExpanded['accordion-button-24'] ? 'true' : 'false'" (click)="toggleAccordion('accordion-button-24')">
+                   <span class="accordion-title">Comment puis-je vérifier si un produit convient à mes allergies ?</span>
+                   <span class="icon" aria-hidden="true"></span>
+                 </button>
+                 <div class="accordion-content" [ngClass]="{'expanded': isAccordionExpanded['accordion-button-24']}">
+                   <p>
+                     Yes, we have designed our filters to be environmentally friendly. The plastic components of our filter are recyclable, and the activated carbon used in the filter is biodegradable. We encourage users to separate these components and dispose of them correctly at the end of the filter's lifespan.
+                   </p>
+                 </div>
+               </div>
+             </div>
+      
+           
+            
+      
+      
+      
+      
+          </div>
+        </div>
+        </div>
+   
+     
+
+
+
+
+</div>
+    </div>
+</section>
+ 

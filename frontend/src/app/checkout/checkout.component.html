@@ -1,0 +1,334 @@
+
+<section class="bg-white">
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<!-- ##################### Slider Starts Here #################### -->
+
+   <div  >
+<section class="details">
+<h3>Validation de la commande</h3>
+  <br>
+  <table>
+    <thead>
+      <tr>
+        <th>Produit</th>
+        <th>Prix</th>
+        <th>Quantité</th>
+        <th>Sous-total</th>
+        <th>Supprimer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let produit of produits; let i = index">
+        <td class="product">
+          <div class="product-item">
+     <!--        <img src="assets/images/product/waterPurifierFilter.png" alt="Image produit">--> 
+            <span class="productName">{{ produit.productName }}</span>
+          </div>
+        </td>
+        <td class="price">{{ produit.productPrice }} TND</td>
+        <td class="quantity">
+          <div class="quantity-box"> 
+            <div class="quantity-controls">
+              <button class="quantity-decrease" (click)="decreaseQuantity(i)" [class.clicked]="buttonDecreaseClicked">-</button>
+              <input type="number" id="quantity" name="quantity" [(ngModel)]="produit.quantity" (ngModelChange)="updateTotal(i)" min="1">
+              <button class="quantity-increase" (click)="increaseQuantity(i)" [class.clicked]="buttonIncreaseClicked">+</button>
+            </div>
+          </div>
+        </td>
+        <td class="subtotal">{{ produit.subTotal }} TND</td>
+        <td class="delete">
+          <div class="product-icon" (click)="deleteProduct(i)"><i class="far fa-times-circle icone"></i></div>
+        </td>
+      </tr>
+  
+      <tr>
+        <td colspan="5">
+          <div class="additional-row">
+            <input type="text" placeholder="Coupon Code" class="coupon-input">
+            <button class="coupon-button">Appliquer le coupon</button> 
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div class="container">
+  <div class="billing">
+    <h3>Détails de facturation<hr></h3>
+
+    <form class="form">
+      
+      
+        <div class="form-group">
+    <div class="name-fields">
+      <div class="form-field first-name">
+        <label for="first-name">Prénom  <span class="redstar">*</span></label>
+        <input type="text" id="first-name" name="first-name" required>
+      </div>
+      <div class="form-field last-name">
+        <label for="last-name">Nom <span class="redstar">*</span></label>
+        <input type="text" id="last-name" name="last-name" required>
+      </div>
+
+
+
+    </div>
+  </div>  
+      <div class="form-group">
+        <label for="company-name">Nom de la société (facultatif)</label>
+        <input type="text" id="company-name" name="company-name">
+      </div>
+      
+      <div class="form-group">
+        <label for="country">Pays / Région <span class="redstar">*</span></label>
+        <select id="country" name="country" required>
+          <option value="">Sélectionner le pays</option>
+          <option value="US">États-Unis (US)</option>
+          <!-- Ajoutez d'autres options pour différents pays -->
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="street-address">Adresse <span class="redstar">*</span></label>
+        <input type="text" id="street-address" name="street-address" placeholder="House number and street name" required><br>
+        <input type="text" id="house-number" name="house-number" placeholder="Apartment, suite, unit, etc. (optional)" style="margin-top: 10px;">
+      </div>
+      
+       
+
+      
+      <div class="form-group">
+        <label for="town-city">Ville <span class="redstar">*</span></label>
+        <input type="text" id="town-city" name="town-city" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="state">État  <span class="redstar">*</span></label>
+        <select id="country" name="country" required>
+          <option value="">Sélectionner l'État</option>
+          <option value="US">États-Unis (US)</option>
+          <!-- Ajoutez d'autres options pour différents pays -->
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="zip-code">Code postal <span class="redstar">*</span></label>
+        <input type="text" id="zip-code" name="zip-code" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="phone">Téléphone  <span class="redstar">*</span></label>
+        <input type="text" id="phone" name="phone" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Adresse e-mail <span class="redstar">*</span></label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      
+      <div class="form-group checkbox">
+        
+        <input type="checkbox" id="create-account" name="create-account">
+        <label for="create-account">Créer un compte ?</label>
+      </div>
+      <div class="form-group checkbox">
+        
+        <input type="checkbox" id="unsubscrive-newsletters" name="unsubscrive-newsletters">
+        <label for="unsubscrive-newsletters">Se désabonner des newsletters</label>
+      </div>
+      
+      <div class="form-group checkbox">
+        <input type="checkbox" id="ship-to-different-address" name="ship-to-different-address"
+               [(ngModel)]="isShipToDifferentAddress"
+               (change)="onCheckboxChange()">
+        <label for="ship-to-different-address" style="font-size: 20px;">Livrer à une autre adresse ?</label>
+      </div>
+<hr class="formShippinghr">
+      <div class="formShipping" *ngIf="isShipToDifferentAddress">
+
+
+        <form class="form">
+      
+      
+          <div class="form-group">
+      <div class="name-fields">
+        <div class="form-field first-name">
+          <label for="first-name">Prénom  <span class="redstar">*</span></label>
+          <input type="text" id="first-name" name="first-name" required>
+        </div>
+
+        <div class="form-field last-name">
+          <label for="last-name">Nom <span class="redstar">*</span></label>
+          <input type="text" id="last-name" name="last-name" required>
+        </div>
+      </div>
+    </div>  
+        <div class="form-group">
+          <label for="company-name">Nom de la société (facultatif)</label>
+          <input type="text" id="company-name" name="company-name">
+        </div>
+        
+        <div class="form-group">
+          <label for="country">Pays / Région <span class="redstar">*</span></label>
+          <select id="country" name="country" required>
+            <option value="">Sélectionner le pays</option>
+            <option value="US">États-Unis (US)</option>
+            <!-- Ajoutez d'autres options pour différents pays -->
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="street-address">Adresse  <span class="redstar">*</span></label>
+          <input type="text" id="street-address" name="street-address" placeholder="House number and street name" required><br>
+          <input type="text" id="house-number" name="house-number" placeholder="Apartment, suite, unit, etc. (optional)" style="margin-top: 10px;">
+        </div>
+        
+         
+ 
+        
+        <div class="form-group">
+          <label for="town-city">Ville  <span class="redstar">*</span></label>
+          <input type="text" id="town-city" name="town-city" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="state">État <span class="redstar">*</span></label>
+          <select id="country" name="country" required>
+            <option value="">Sélectionner l'État</option>
+            <option value="US">États-Unis (US)</option>
+            <!-- Ajoutez d'autres options pour différents pays -->
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="zip-code">Code postal <span class="redstar">*</span></label>
+          <input type="text" id="zip-code" name="zip-code" required>
+        </div>
+        
+    
+        
+      
+      </form>
+
+      </div>
+      
+      <div class="form-group">
+        <label for="order-notes">Notes de la commande (facultatif)</label>
+        <textarea id="order-notes" name="order-notes" placeholder="Notes about your order, e.g. sepcial notes for delivery"></textarea>
+      </div>
+      
+    
+    </form>
+  </div>
+  <div class="payment">
+    <div class="order-summary">
+      <span class="order">Votre commande</span>
+      <div class="product-details">
+        <div class="productcard">
+          <span style="font-weight: bold;">Produits</span>
+          <span style="font-weight: bold;">Sous-total</span>
+        </div>
+        
+        <!-- Boucle à travers les produits du panier -->
+        <div class="productcard" *ngFor="let produit of produits">
+          <span class="product-name">{{ produit.productName }}</span>
+          <span class="product-quantity">× {{ produit.quantity }} </span>
+        </div>
+        
+        <div class="subtotalcard">
+          <span class="subtotal-label">Sous-total</span>
+          <span class="subtotal-value">{{ calculateSubTotal() }}TND</span>
+        </div>
+        <div class="shippingcard">
+          <span class="shipping-label">Livraison</span>
+          <span class="shipping-value">Livraison dans le monde entier</span>
+        </div>
+        <div class="totalcard">
+          <span class="total-label">Total</span>
+          <span class="total-value"> {{ calculateTotal() }} TND</span>
+        </div> 
+  </div>
+  
+  <div class="payment-method">
+     
+    <form [formGroup]="paymentForm" class="paymentFormStyle">
+      <div class="payment-option">
+        
+      <!--<div class="radio-container">
+          <input type="radio" id="paypal-radio" formControlName="paymentMethod" value="paypal" (click)="onPaymentMethodPaypal()">
+          <div class="radio-custom"></div>
+        </div>
+        <label for="paypal-radio" [class.label-selected]="paymentForm.value.paymentMethod === 'paypal'">PayPal
+          <img class="paypalimg" src="assets/payment/paypal_logo.png" alt="PayPal Logo">
+        </label>
+      -->  
+      </div>
+    
+      <div class="line" [ngClass]="{ 'expanded': paymentForm.value.paymentMethod != 'credit-card' }"></div>
+
+      <div class="payment-option">
+        <div class="radio-container radioCards" [class.radio-selected]="paymentForm.value.paymentMethod === 'credit-card'">
+          <input type="radio" id="credit-card-radio" formControlName="paymentMethod" value="credit-card" (click)="onPaymentMethodChange()">
+          <div class="radio-custom"></div>
+        </div>
+        
+        <div class="label-container" [class.label-selected]="paymentForm.value.paymentMethod === 'credit-card'">
+          <label for="credit-card-radio">Paiement par carte de crédit</label>
+        </div><br>
+        <div class="credit-card-logos-container" [ngClass]="{ 'expanded': paymentForm.value.paymentMethod === 'credit-card' }">
+
+
+            <div class="logo-stripe">
+              <img src="assets/images/logo-stripe.png" alt="Visa Logo">
+            </div>
+            <!-- Ajoutez les autres logos de cartes de crédit ici -->
+
+        </div>
+      </div>
+    </form>
+    
+    
+    
+    
+    
+    
+  
+  </div>
+  
+  
+  <div class="terms-conditions">
+    <p>Vos données personnelles seront utilisées pour traiter votre commande, soutenir votre expérience sur ce site Web et à d'autres fins décrites dans notre politique de confidentialité.</p>
+    <input type="checkbox" id="terms-checkbox" class="termscheckbox">
+    <label for="terms-checkbox" class="terms-checkboxlabel">    J'ai lu et j'accepte les termes et conditions du site Web</label>
+  </div>
+  <div class="button-container">
+   <!--
+    <button class="buttonPaypal" *ngIf="paymentForm.value.paymentMethod !== 'credit-card'"> 
+    </button>
+   --> 
+    
+    <button class="buttoncreditCard"   (click)="pay(calculateTotal())" >Passer la commande</button>
+
+  </div>
+</div>
+
+</div>
+</div>
+    
+
+</section>
+      
+        
+       
+   </div>
+
+    <!--- ############ Footer Starts Here ################## -->
+
+
+
+
+</section>
+
+

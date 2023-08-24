@@ -1,0 +1,103 @@
+/* Styles pour les sections de contenu */
+.div-title {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.div-title h2 {
+  color: #b89a68;
+  font-size: 2rem;
+}
+
+.div-title p {
+  color: #8c6b5d;
+  font-size: 1rem;
+}
+
+.container-lg {
+  padding: 40px;
+}
+
+.container-lg h3 {
+  color: #b89a68;
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+.container-lg p {
+  color: #8c6b5d;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.container-lg ul {
+  color: #8c6b5d;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.container-lg li {
+  margin-bottom: 10px;
+}
+
+.container-lg img {
+  max-width: 100%;
+}
+
+.image2{
+  margin-left: 150px;
+  margin-top: -300px;
+  margin-bottom: 200px;
+  text-align: justify;
+  color:#8c6b5d;
+}
+.image2 h3{
+  color: #b89a68;
+}
+
+
+/* Styles pour la bannière promotionnelle (exemple) */
+.promotion-banner {
+  display: flex;
+  align-items: center;
+  background-color: #f8e5d8;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.promotion-banner img {
+  max-width: 200px;
+  margin-right: 20px;
+}
+
+.promotion-content {
+  flex: 1;
+}
+
+.promotion-content h3 {
+  font-size: 1.5rem;
+  color: #b89a68;
+  margin-bottom: 10px;
+}
+
+.promotion-content p {
+  font-size: 1rem;
+  color: #8c6b5d;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background-color: #b89a68;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #8c6b5d;
+  color: #fff;
+}

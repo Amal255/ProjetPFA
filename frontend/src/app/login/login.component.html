@@ -1,0 +1,45 @@
+
+<section>
+    <div class="container-lg content">
+        <div class="login">
+            <h2>Connexion</h2>
+            <form class="login-form">
+                <div class="field input-fiels">
+                    <label for="">Nom d'utilisateur ou adresse e-mail<span class="star">*</span></label>
+                    <input type="email" placeholder="E-mail" class="input">
+                </div>
+                <div class="field input-fiels">
+                    <label for="">Mot de passe<span class="star">*</span></label>
+                    <div class="pwd-div">
+                        <input [type]="type" placeholder="Mot de passe" class="password">
+                        <i class="bi {{ eyeIcon }}" id="togglePassword" (click)="hideShowPass()"></i>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" name="rememberMe" value="rememberMe" style="margin-right: 2px;">
+                    <label for="rememberMe">Se souvenir de moi</label><br>
+                </div>
+                <div class="field">
+                    <button class="button-field"  >Connexion</button>
+                </div>
+                <div class="form-link">
+                    <a href="" class="forgot-pass" style="color: #1690F0;">Mot de passe oublié ?</a>
+                </div>
+            </form>
+        </div>
+        <div class="register">
+            <h2>Inscription</h2>
+            <form class="register-form">
+                <div class="field input-fiels">
+                    <label for="">Adresse e-mail<span class="star">*</span></label>
+                    <input type="email" placeholder="E-mail" class="input">
+                </div>
+                <p style="margin-bottom: 20px;">Un lien pour définir un nouveau mot de passe sera envoyé à votre adresse e-mail.</p>
+                <p>Vos données personnelles seront utilisées pour prendre en charge votre expérience sur ce site Web, pour gérer l'accès à votre compte et à d'autres fins décrites dans notre <span style="color:#1690F0; cursor:pointer;">politique de confidentialité</span>.</p>
+                <div class="field">
+                    <button class="button-field"  >S'inscrire</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

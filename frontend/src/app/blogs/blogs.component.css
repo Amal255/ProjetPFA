@@ -1,0 +1,119 @@
+/* Container */
+section.bg-white {
+  padding-top: 9rem;
+  padding-bottom: 5.5rem;
+  background-color: #fff;
+}
+
+.container-lg {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.div-title {
+  max-width: 900px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.div-title h2 {
+  color:#b89a68 ;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  font-size: 4rem;
+}
+
+.div-title p {
+  color: #8c6b5d;
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+
+/* Box Container */
+.box-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.box {
+  width: calc(33.33% - 20px);
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.box .image {
+  position: relative;
+}
+
+.box img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.likes {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.likes i {
+  color: #E92B42;
+  margin-right: 5px;
+}
+
+.likes p {
+  color: #1B2656;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.content {
+  padding: 20px;
+}
+
+.content h5 {
+  color: #b89a68;
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.content p {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.content a.btn {
+  display: inline-block;
+  background-color: #b89a68;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-decoration: none;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+}
+
+.content a.btn:hover {
+  background-color: #8c6b5d;
+}
+
+/* Shadow */
+.shadow {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

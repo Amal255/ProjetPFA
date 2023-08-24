@@ -1,0 +1,165 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ <!-- ##################### Slider Starts Here #################### -->
+ 
+ <section class="bg-white">
+  <div class="container-lg">
+
+  <!-- product-details.component.html -->
+
+     
+   <div class="container">
+     <div class="product-images-container">
+       <div class="product-images-list">
+         <img *ngFor="let image of imageList; let i = index" [src]="image" [alt]="'Product Image ' + (i + 1)"
+              (click)="updateSelectedImage(i)">
+         <!-- Ajoutez plus d'images si nécessaire -->
+       </div>
+     
+       <div class="product-image">
+         <div class="zoom-icon" (click)="toggleImageZoom()"></div>
+         <img [src]="selectedImage" alt="Selected Product Image"
+              [ngClass]="{'zoomed': isImageZoomed}"
+              (mousedown)="startDrag($event)"
+              (mousemove)="doDrag($event)"
+              (mouseup)="endDrag()">
+       </div>
+       
+     </div>
+     
+
+     
+     <div class="product-info"> 
+        <div class="">
+           <span class="text"></span>
+         </div>
+<br>
+<p>
+
+</p>
+       <h2 class="product-title">{{ productName }}</h2>
+   
+         
+         
+         
+         
+         <label for="price" class="labelPrice">Price : </label>
+         <p class="product-price" id="price"> {{ productPrice }} TND</p><br><br>
+         
+       
+       <div class="product-options">
+         <!-- Ajoutez ici les options du produit (taille, couleur, etc.) -->
+       </div>
+       <div class="quantity-box">
+         <label for="quantity">Quantity:</label>
+         <div class="quantity-controls">
+           <button class="quantity-decrease" (click)="decreaseQuantity()" [class.clicked]="buttonDecreaseClicked">-</button>
+           <input type="number" id="quantity" name="quantity" [(ngModel)]="quantity" min="1">
+           <button class="quantity-increase" (click)="increaseQuantity()" [class.clicked]="buttonIncreaseClicked">+</button>
+         </div>
+       </div>
+
+
+       <button class="add-to-cart" (click)="addToCart()">
+           <i class="fa fa-shopping-cart"></i> Ajouter au panier
+         </button>
+         <br>
+       <div class="tab-container">
+           <div class="tab" (click)="toggleTabContentDetails()">
+             <span class="tab-title">Description</span>
+             
+             <i class="fas" [ngClass]="{'fa-chevron-down': showTabContentDetails, 'fa-chevron-right': !showTabContentDetails}"></i>
+           </div>
+           <div class="tab-content" *ngIf="showTabContentDetails">
+             <!-- Contenu du tab "Features" -->
+
+         <p class="product-description">{{ productDescription }}</p>
+             <ul>
+               <li><i class="fas fa-check beige-icon"></i>  Procédé d'obtention: il est obtenu par une première extraction à froid</li>
+               <li><i class="fas fa-check beige-icon"></i>  Partie de plante extraite:  le noyau </li>
+               <li><i class="fas fa-check beige-icon"></i>  Qualité :100% pure et naturelle, extra vierge, sans aucun traitement chimique.</li>
+ 
+             </ul>
+ 
+             
+           </div>
+         </div>
+
+         <div class="horizontal-line"></div>
+
+       <div class="tab-container">
+         <div class="tab" (click)="toggleTabContentFeatures()">
+           <span class="tab-title">Vertus</span>
+           
+           <i class="fas" [ngClass]="{'fa-chevron-down': showTabContentFeatures, 'fa-chevron-right': !showTabContentFeatures}"></i>
+         </div>
+         <div class="tab-content" *ngIf="showTabContentFeatures">
+ 
+             <p>- Elle permet de stimuler la production du collagène1, collagène majoritaire du derme et responsable de la souplesse et la fermeté de la peau. <br>
+                - Elle permet  de réparer les dommages causés aux cellules par le stress oxydatif . <br>
+                - Elle a une fonction protectrice, en augmentant les défenses naturelles de la peau contre le stress oxydatif. <br>
+                - Antiseptique, cicatrisante, nourrissante et réparatrice, elle favorise la régénération des tissus, réduit les rides, renforce l'élasticité de la peau et prévient son vieillissement. Elle est très efficace sur les peaux sèches et abîmées. <br></p>
+         </div>
+       </div>
+
+
+       <div class="horizontal-line"></div>
+
+      
+
+       <div class="tab-container">
+         <div class="tab" (click)="toggleTabContentTechnicalOverview()">
+           <span class="tab-title">Composition</span>
+           <i class="fas" [ngClass]="{'fa-chevron-down': showTabContentTechnicalOverview, 'fa-chevron-right': !showTabContentTechnicalOverview}"></i>
+         </div>
+         <div class="tab-content" *ngIf="showTabContentTechnicalOverview">
+            <p>
+                - Les phytostérols: protecteurs <br>
+- Les phytosteroides: compensateurs du déclin hormonal<br>
+    Les isoflavones: anti- âge <br>
+- l'acide ursolique: régénérant <br>
+- les policasanols: renforcent le ciment lipidique de la peau <br>
+- Le tocotriénol et la vitamine A: anti-oxydant <br>
+            </p>
+         </div>
+       </div>
+       
+
+         <div class="horizontal-line"></div>
+
+
+         <div class="tab-container">
+           <div class="tab" (click)="toggleTabContentShipping()">
+             <span class="tab-title">Présente dans</span>
+             
+             <i class="fas" [ngClass]="{'fa-chevron-down': showTabContentShipping, 'fa-chevron-right': !showTabContentShipping}"></i>
+           </div>
+           <div class="tab-content" *ngIf="showTabContentShipping">
+              
+                <ul>
+                    <li><i class="fas fa-check beige-icon"></i>  Sérum précieux anti-rides supreme</li>
+                    <li><i class="fas fa-check beige-icon"></i>  Crème précieuse anti-rides</li>
+                    <li><i class="fas fa-check beige-icon"></i>  Regard précieux anti-cernes</li>
+                    <li><i class="fas fa-check beige-icon"></i>  Feet beauty care</li>
+                </ul> 
+           </div>
+         </div>
+
+<div class="horizontal-line"></div>
+     </div>
+
+    
+     
+
+   </div>
+   
+  </div>
+ </section> 
+ 
+ 
+     
+   
+       
+
+
+      <!--- ############ Footer Starts Here ################## -->

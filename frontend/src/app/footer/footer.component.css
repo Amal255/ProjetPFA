@@ -1,0 +1,113 @@
+
+
+.inner{
+    color: #8c6b5d;
+    background-color: #f4e1c1
+}
+.callUs{
+    padding-bottom: 0.5rem;
+    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #8c6b5d;
+    border: #f4e1c1
+}
+.callUs > button{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem 2rem;
+    background-color: #f4e1c1;
+    border-radius: 25px;
+    font-size: 1rem;
+    color: #8c6b5d;
+    transition: 0.5s;
+}
+.callUs > button:hover{
+    opacity: 90%;
+}
+.callUs > button > i{
+    margin-right: 10px;
+}
+.wavy{
+    position:relative;
+    width: 300px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    margin: 0 auto;
+    }
+.wavy::before{
+    content: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';
+   /*  position: absolute;
+    top: -42px;
+    left: -50%; */
+    font-size: 0.5em;
+    text-decoration-style: wavy;
+    text-decoration-color:#f4e1c1;
+    text-decoration-line: underline;
+    text-align: center;
+    color: transparent; 
+}
+.row{
+    margin-top: 2rem;
+}
+.logo{
+    width: 60%;
+    margin-top: -20%;
+    margin-bottom: 1rem;
+}
+.address> li> i{
+    margin-right: 10px;
+    color: #f4e1c1;
+    font-size: 1.1rem;
+}
+
+.end-footer{
+    background-color:#8c6b5d;
+    color: beige ;
+ 
+}
+.end-footer .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.policy{
+    text-align: right;
+
+}
+.aa:hover{
+    color: #f4e1c1
+}
+
+@media screen and (max-width: 992px) {
+ 
+        .callUs{
+           flex-direction: column;
+           text-align: center;
+        }
+        .callUs > button{
+            margin-top: 1rem;
+            font-size: 0.9rem;
+         }
+         .end-footer .container{
+            flex-direction: column;
+         }
+         .rights{
+            margin-bottom: 10px;
+         }
+         .foot-item{
+            margin-bottom: 30px;
+         }
+         .wavy::before{
+           font-size: 0.2rem;}
+    
+  }
+
+@media screen and (max-width: 600px) {
+
+  }

@@ -1,0 +1,119 @@
+section{
+    min-height: 90vh;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5rem;
+}
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.register,
+.login{
+    width: 40%;
+}
+.register h2,
+.login h2{
+    margin-bottom: 20px;
+    color: #1B2656;;
+}
+.login-form,
+.register-form{
+    padding: 2rem;
+    border: 0.2px solid #d1d2d7;
+    min-height: 300px;
+    height: 380px;
+    border-radius: 5px;
+}
+form .field{
+    height: 45px;
+    width: 100%;
+    margin-bottom: 45px;
+    position: relative;
+    border-radius: 6px;
+}
+form label{
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #1B2656;
+}
+.field input,
+.field button,
+.pwd-div
+{
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    border: 6px;
+    border-radius: 5px;
+}
+.button-field{
+    background-color: #b89a68; color:#fff; margin-top:20px
+}
+
+.button-field:hover {
+    background-color: #cab65d; 
+  }
+
+.field input{
+    padding: 0 15px;
+    border: 0.2px solid #d1d2d7;
+    outline: none;
+}
+.pwd-div{
+    position: relative;
+}
+.pwd-div i{
+    position: absolute;
+    top: 13px;
+    right: 8px;
+    cursor: pointer;
+}
+.star{
+    color: red;
+}
+@media screen and (max-width: 1100px) {
+ 
+    .content{
+        justify-content: space-between;
+    
+    }
+
+    .login-form,
+    .register-form{
+        height: 400px;
+    }
+
+}
+@media screen and (max-width: 992px) {
+    .content{
+        flex-direction: column;
+    }
+    .register,
+.login{
+    width: 70%;
+}
+.login{
+   margin-bottom: 40px;
+}
+section{ height: 150vh;}
+ 
+
+}
+@media screen and (max-width: 500px) {
+    .register,
+.login{
+    width: 90%;
+}
+
+}
+
+ 
+

@@ -1,0 +1,173 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ <!-- ##################### Slider Starts Here #################### -->
+ 
+ <section class="bg-white">
+  <div class="container-lg">
+
+  <!-- product-details.component.html -->
+
+     
+   <div class="container">
+     <div class="product-images-container">
+       <div class="product-images-list">
+         <img *ngFor="let image of imageList; let i = index" [src]="image" [alt]="'Product Image ' + (i + 1)"
+              (click)="updateSelectedImage(i)">
+         <!-- Ajoutez plus d'images si nécessaire -->
+       </div>
+     
+       <div class="product-image">
+         <div class="zoom-icon" (click)="toggleImageZoom()"></div>
+         <img [src]="selectedImage" alt="Selected Product Image"
+              [ngClass]="{'zoomed': isImageZoomed}"
+              (mousedown)="startDrag($event)"
+              (mousemove)="doDrag($event)"
+              (mouseup)="endDrag()">
+       </div>
+       
+     </div>
+     
+
+     
+     <div class="product-info"> 
+        <div class="">
+           <span class="text"></span>
+         </div>
+<br>
+<p>
+    
+</p>
+       <h2 class="product-title">{{ productName }}</h2>
+   
+         
+         
+         
+         
+         <label for="price" class="labelPrice">Prix : </label>
+         <p class="product-price" id="price"> {{ productPrice }} TND</p><br><br>
+         
+       
+       <div class="product-options">
+         <!-- Ajoutez ici les options du produit (taille, couleur, etc.) -->
+       </div>
+       <div class="quantity-box">
+         <label for="quantity">Quantité :</label>
+         <div class="quantity-controls">
+           <button class="quantity-decrease" (click)="decreaseQuantity()" [class.clicked]="buttonDecreaseClicked">-</button>
+           <input type="number" id="quantity" name="quantity" [(ngModel)]="quantity" min="1">
+           <button class="quantity-increase" (click)="increaseQuantity()" [class.clicked]="buttonIncreaseClicked">+</button>
+         </div>
+       </div>
+
+
+       <button class="add-to-cart" (click)="addToCart()">
+           <i class="fa fa-shopping-cart"></i> Ajouter au panier
+         </button>
+         <br>
+       <div class="tab-container">
+           <div class="tab" (click)="toggleTabContentDetails()">
+             <span class="tab-title">Description</span>
+             
+             <i class="fas" [ngClass]="{'fa-chevron-down': showTabContentDetails, 'fa-chevron-right': !showTabContentDetails}"></i>
+           </div>
+           <div class="tab-content" *ngIf="showTabContentDetails">
+             <!-- Contenu du tab "Features" -->
+
+         <p class="product-description">{{ productDescription }}</p>
+             <ul>
+               <li><i class="fas fa-check beige-icon"></i>  Procédé d'obtention:  Première pression à froid</li>
+               <li><i class="fas fa-check beige-icon"></i>  Partie de la plante extraite:  Les Graines  </li>
+               <li><i class="fas fa-check beige-icon"></i>  Qualité :   100% pure et naturelle, vierge, sans aucun traitement chimiques.</li>
+ 
+             </ul>
+ 
+             
+           </div>
+         </div>
+
+         <div class="horizontal-line"></div>
+
+       <div class="tab-container">
+         <div class="tab" (click)="toggleTabContentFeatures()">
+           <span class="tab-title">Vertus</span>
+           
+           <i class="fas" [ngClass]="{'fa-chevron-down': showTabContentFeatures, 'fa-chevron-right': !showTabContentFeatures}"></i>
+         </div>
+         <div class="tab-content" *ngIf="showTabContentFeatures">
+ 
+             <p>- La reine Nefertiti utilisait un seul un seul soin de beauté: l'huile de nigelle, pour embellir sa peau et illuminer son teint. <br>
+                - L'huile de nigelle empêche l'oxydation des membranes cellulaires et exerce donc une action antioxydante qui régénère la peau en profondeur, retarde les effets du vieillissement, protège les cellules de l'épiderme, assouplit, nourrit et redonne élasticité à la peau. <br>
+                - Anti-infectieuse, anti-inflammatoire, cicatrisante, anti-irritation, apaisante, antioxydante, l'huile de nigelle est idéale pour les peaux grasses, à tendance acnéique. Grace à ses vertus purifiantes et régénérantes, elle aide la peau à se renouveler et atténue les cicatrices d'acné. L'huile de nigelle pénètre très facilement et a l'avantage d’être non grasse.<br></p>
+         </div>
+       </div>
+
+
+       <div class="horizontal-line"></div>
+
+      
+
+       <div class="tab-container">
+         <div class="tab" (click)="toggleTabContentTechnicalOverview()">
+           <span class="tab-title">Composition</span>
+           <i class="fas" [ngClass]="{'fa-chevron-down': showTabContentTechnicalOverview, 'fa-chevron-right': !showTabContentTechnicalOverview}"></i>
+         </div>
+         <div class="tab-content" *ngIf="showTabContentTechnicalOverview">
+            <p>- Acides gras essentiels poly-insaturés (oméga 6) : Une carence en oméga 6 peut entraîner une sécheresse intense de la peau et des allergies. Au niveau cutané, cet acide gras permet de limiter les pertes hydriques de la peau tout en présentant des qualités adoucissantes et nutritives.<br>
+                - Acides gras mono-insaturés (oméga 9): contribuent à la jeunesse et l'élasticité, la nutrition et l'hydratation de la peau. <br>
+                - Acides gras saturés: acide palmitique.<br>
+                - Huile essentielle de nigelle, dont thymoquinone, para-cymène:  Immunostimulante, antiseptique, anti-inflammatoire.<br>
+                - Nigelline: principe actif amer, stimulant les systèmes digestif et intestinal.<br>
+                - Nigellone: substance broncho-dilatatrice et anti-histaminique ( anti-allergique)<br>
+                - Vitamine E: antioxydant naturel<br>
+                - Caroténoides: action anti-radicalaire: protègent les tissus de la dégénérescence.<br>
+                - Minéraux: fer, phosphore... <br>
+            </p>
+         </div>
+       </div>
+       
+
+         <div class="horizontal-line"></div>
+
+
+         <div class="tab-container">
+           <div class="tab" (click)="toggleTabContentShipping()">
+             <span class="tab-title">Présente dans</span>
+             
+             <i class="fas" [ngClass]="{'fa-chevron-down': showTabContentShipping, 'fa-chevron-right': !showTabContentShipping}"></i>
+           </div>
+           <div class="tab-content" *ngIf="showTabContentShipping">
+              <p>
+                L'huile de nigelle est utilisée dans une panoplie de produits Acilla:
+              </p>
+                <ul>
+                    <li><i class="fas fa-check beige-icon"></i>  Lait nettoyant peaux acnéiques</li>
+                    <li><i class="fas fa-check beige-icon"></i>  Sérum précieux anti-rides supreme</li>
+                    <li><i class="fas fa-check beige-icon"></i>  Daily repair jour</li>
+                    <li><i class="fas fa-check beige-icon"></i>  Daily repair nuit </li>
+                    <li><i class="fas fa-check beige-icon"></i>  Crème précieuse anti-rides</li>
+                    <li><i class="fas fa-check beige-icon"></i>  Crème précieuse anti-taches brunes</li>
+                    <li><i class="fas fa-check beige-icon"></i>  Lait corporel régénérant</li>
+                    <li><i class="fas fa-check beige-icon"></i>  Crème corps soyeuse  </li>
+                </ul> 
+           </div>
+         </div>
+
+<div class="horizontal-line"></div>
+     </div>
+
+    
+     
+
+   </div>
+   
+  </div>
+ </section> 
+ 
+ 
+     
+   
+       
+
+
+      <!--- ############ Footer Starts Here ################## -->
+

@@ -1,0 +1,52 @@
+section {
+  padding-top: 9rem;
+  padding-bottom: 5.5rem;
+} 
+
+.div-title {
+  max-width: 900px;
+  margin: 0 auto; 
+  margin-bottom: 50px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.div-title h2 {
+  color: #8c6b5d;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  font-size: 4rem;
+  font-size: 3rem;  
+}
+
+form .field {
+  margin-bottom: 20px;
+}
+
+
+
+
+input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 5px;
+  padding: 0 15px;
+  border: 0.2px solid #d1d2d7;
+  outline: none;
+  background-color: #fff;
+}
+
+button.btn-light {
+  background-color: #f4e1c1;
+  color: #8c6b5d;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+

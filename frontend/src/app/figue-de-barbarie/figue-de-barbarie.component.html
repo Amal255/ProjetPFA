@@ -1,0 +1,178 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ <!-- ##################### Slider Starts Here #################### -->
+ 
+ <section class="bg-white">
+  <div class="container-lg">
+
+  <!-- product-details.component.html -->
+
+     
+   <div class="container">
+     <div class="product-images-container">
+       <div class="product-images-list">
+         <img *ngFor="let image of imageList; let i = index" [src]="image" [alt]="'Product Image ' + (i + 1)"
+              (click)="updateSelectedImage(i)">
+         <!-- Ajoutez plus d'images si nécessaire -->
+       </div>
+     
+       <div class="product-image">
+         <div class="zoom-icon" (click)="toggleImageZoom()"></div>
+         <img [src]="selectedImage" alt="Selected Product Image"
+              [ngClass]="{'zoomed': isImageZoomed}"
+              (mousedown)="startDrag($event)"
+              (mousemove)="doDrag($event)"
+              (mouseup)="endDrag()">
+       </div>
+       
+     </div>
+     
+
+     
+     <div class="product-info"> 
+        <div class="">
+           <span class="text"></span>
+         </div>
+<br>
+<p>
+    
+</p>
+       <h2 class="product-title">{{ productName }}</h2>
+   
+         
+         
+         
+         
+         <label for="price" class="labelPrice">Prix : </label>
+         <p class="product-price" id="price"> {{ productPrice }} TND</p><br><br>
+         
+       
+       <div class="product-options">
+         <!-- Ajoutez ici les options du produit (taille, couleur, etc.) -->
+       </div>
+       <div class="quantity-box">
+         <label for="quantity">Quantité :</label>
+         <div class="quantity-controls">
+           <button class="quantity-decrease" (click)="decreaseQuantity()" [class.clicked]="buttonDecreaseClicked">-</button>
+           <input type="number" id="quantity" name="quantity" [(ngModel)]="quantity" min="1">
+           <button class="quantity-increase" (click)="increaseQuantity()" [class.clicked]="buttonIncreaseClicked">+</button>
+         </div>
+       </div>
+
+
+       <button class="add-to-cart" (click)="addToCart()">
+           <i class="fa fa-shopping-cart"></i> Ajouter au panier
+         </button>
+         <br>
+       <div class="tab-container">
+           <div class="tab" (click)="toggleTabContentDetails()">
+             <span class="tab-title">Description</span>
+             
+             <i class="fas" [ngClass]="{'fa-chevron-down': showTabContentDetails, 'fa-chevron-right': !showTabContentDetails}"></i>
+           </div>
+           <div class="tab-content" *ngIf="showTabContentDetails">
+             <!-- Contenu du tab "Features" -->
+
+         <p class="product-description">{{ productDescription }}</p>
+             <ul>
+               <li><i class="fas fa-check beige-icon"></i>  Procédé d'obtention: Première pression à froid</li>
+               <li><i class="fas fa-check beige-icon"></i>  Partie de plante extraite: Graines      </li>
+               <li><i class="fas fa-check beige-icon"></i>  Qualité: Pure et naturelle, vierge, première pression à froid et sans aucun solvant chimique</li>
+ 
+             </ul>
+ 
+             
+           </div>
+         </div>
+
+         <div class="horizontal-line"></div>
+
+       <div class="tab-container">
+         <div class="tab" (click)="toggleTabContentFeatures()">
+           <span class="tab-title">Vertus</span>
+           
+           <i class="fas" [ngClass]="{'fa-chevron-down': showTabContentFeatures, 'fa-chevron-right': !showTabContentFeatures}"></i>
+         </div>
+         <div class="tab-content" *ngIf="showTabContentFeatures">
+ 
+             <p>- Convient à tous les types de peaux. Elle hydrate, protège, répare les peaux sensibles et abîmées, régule le taux de sébum des peaux grasses et estompe les taches .<br>
+                - Diminue la profondeur des rides ainsi que leur nombre<br>
+                - Améliore l'élasticité et lutte contre l'affaissement de la peau  tout en lui apportant une hydratation extrême.<br>
+                - Régénérante et anti-déshydratation : elle est la championne toutes catégories de la lutte anti-ride. Elle lutte contre le vieillissement des tissus, neutralise les radicaux libres et stimule la production cellulaire.<br>
+                - Atténue les rougeurs (rosacea) et calme les coups de soleil.<br>
+                - Resserre les pores de la peau, redonne à la peau du visage et du buste tonus et fermeté.<br>
+                - Son action réparatrice permet d'atténuer le nombre et la profondeur des rides et ridules, ainsi que les poches et cernes sous les yeux.<br>
+                - Son action émolliente assouplit, adouci la peau en profondeur et lui procure un effet lissant.<br>
+                - Permet d'éclaircir la peau en éliminant de multiples imperfections. <br>
+            </p>
+         </div>
+       </div>
+
+
+       <div class="horizontal-line"></div>
+
+      
+
+       <div class="tab-container">
+         <div class="tab" (click)="toggleTabContentTechnicalOverview()">
+           <span class="tab-title">Composition</span>
+           <i class="fas" [ngClass]="{'fa-chevron-down': showTabContentTechnicalOverview, 'fa-chevron-right': !showTabContentTechnicalOverview}"></i>
+         </div>
+         <div class="tab-content" *ngIf="showTabContentTechnicalOverview">
+            <p>- Acide gras essentiel polyinsaturé: Acide linoléique (oméga-6). Une carence en oméga-6 peut entraîner une sécheresse intense de la peau et des allergies. Au niveau cutané, cet acide permet de limiter les pertes hydriques de la peau tout en présentant des qualités adoucissantes et nutritives. <br>
+                - Acide gras mono-insaturé: Acide oléique (oméga-9), contribue à la jeunesse, à l'élasticité, à la nutrition et à l'hydratation de la peau. <br>
+                - Acide gras saturé: Acide palmitique, il a des pouvoirs émollients, émulsifiants et nettoyants.<br>
+                - Tocophérols (vitamine E): environ 1000 mg/kg (antioxydants puissants), protège les cellules de la peau contre le vieillissement. Elle aide l'épiderme à rester aussi souple et lisse que possible.<br>
+                - Stéols (environ 10g/kg): Participent au renouvellement du film hydrolipidique. Il accélèrent la synthèse des phospholipides cutanés et donnent un aspect plus ferme à la peau.<br>
+            </p>
+         </div>
+       </div>
+       
+
+         <div class="horizontal-line"></div>
+
+
+         <div class="tab-container">
+           <div class="tab" (click)="toggleTabContentShipping()">
+             <span class="tab-title">Présente dans</span>
+             
+             <i class="fas" [ngClass]="{'fa-chevron-down': showTabContentShipping, 'fa-chevron-right': !showTabContentShipping}"></i>
+           </div>
+           <div class="tab-content" *ngIf="showTabContentShipping">
+ 
+                <ul>
+                    <li><i class="fas fa-check beige-icon"></i>  Lait démaquillant douceur</li>
+                    <li><i class="fas fa-check beige-icon"></i>  Lait nettoyant peaux acnéiques</li>
+                    <li><i class="fas fa-check beige-icon"></i>  Sérum précieux anti-rides suprême</li>
+                    <li><i class="fas fa-check beige-icon"></i>  Crème purifiante anti-acné </li>
+                    <li><i class="fas fa-check beige-icon"></i>  Crème gommante booster d'éclat</li>
+                    <li><i class="fas fa-check beige-icon"></i>  Daily repair jour</li>
+                    <li><i class="fas fa-check beige-icon"></i>  Daily repair nuit</li>
+                    <li><i class="fas fa-check beige-icon"></i>  Crème précieuse anti-taches brunes </li>
+                    <li><i class="fas fa-check beige-icon"></i>  Regard précieux anti-cernes</li>
+                    <li><i class="fas fa-check beige-icon"></i>  Sérum précieux 3 soins</li>
+                    <li><i class="fas fa-check beige-icon"></i>  Huile précieuse nourrissante</li>
+                    <li><i class="fas fa-check beige-icon"></i>  Hand beauty Care</li>
+                </ul> 
+           </div>
+         </div>
+
+<div class="horizontal-line"></div>
+     </div>
+
+    
+     
+
+   </div>
+   
+  </div>
+ </section> 
+ 
+ 
+     
+   
+       
+
+
+      <!--- ############ Footer Starts Here ################## -->
+

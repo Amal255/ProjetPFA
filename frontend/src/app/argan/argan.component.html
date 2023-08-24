@@ -1,0 +1,148 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ <!-- ##################### Slider Starts Here #################### -->
+ 
+ <section class="bg-white">
+  <div class="container-lg">
+
+  <!-- product-details.component.html -->
+
+     
+   <div class="container">
+     <div class="product-images-container">
+       <div class="product-images-list">
+         <img *ngFor="let image of imageList; let i = index" [src]="image" [alt]="'Product Image ' + (i + 1)"
+              (click)="updateSelectedImage(i)">
+         <!-- Ajoutez plus d'images si nécessaire -->
+       </div>
+     
+       <div class="product-image">
+         <div class="zoom-icon" (click)="toggleImageZoom()"></div>
+         <img [src]="selectedImage" alt="Selected Product Image"
+              [ngClass]="{'zoomed': isImageZoomed}"
+              (mousedown)="startDrag($event)"
+              (mousemove)="doDrag($event)"
+              (mouseup)="endDrag()">
+       </div>
+       
+     </div>
+     
+
+     
+     <div class="product-info"> 
+        <div class="">
+           <span class="text"></span>
+         </div>
+<br>
+<p>
+
+</p>
+       <h2 class="product-title">{{ productName }}</h2>
+   
+         
+         
+         
+         
+         <label for="price" class="labelPrice">Price : </label>
+         <p class="product-price" id="price"> {{ productPrice }} TND</p><br><br>
+         
+       
+       <div class="product-options">
+         <!-- Ajoutez ici les options du produit (taille, couleur, etc.) -->
+       </div>
+       <div class="quantity-box">
+         <label for="quantity">Quantity:</label>
+         <div class="quantity-controls">
+           <button class="quantity-decrease" (click)="decreaseQuantity()" [class.clicked]="buttonDecreaseClicked">-</button>
+           <input type="number" id="quantity" name="quantity" [(ngModel)]="quantity" min="1">
+           <button class="quantity-increase" (click)="increaseQuantity()" [class.clicked]="buttonIncreaseClicked">+</button>
+         </div>
+       </div>
+
+
+       <button class="add-to-cart" (click)="addToCart()">
+           <i class="fa fa-shopping-cart"></i> Ajouter au panier
+         </button>
+         <br>
+       <div class="tab-container">
+           <div class="tab" (click)="toggleTabContentDetails()">
+             <span class="tab-title">Description</span>
+             
+             <i class="fas" [ngClass]="{'fa-chevron-down': showTabContentDetails, 'fa-chevron-right': !showTabContentDetails}"></i>
+           </div>
+           <div class="tab-content" *ngIf="showTabContentDetails">
+             <!-- Contenu du tab "Features" -->
+
+         <p class="product-description">{{ productDescription }}</p>
+             <ul>
+               <li><i class="fas fa-check beige-icon"></i>  L'huile miracle de nos grands mère: des vertus pour la peau, les cheveux, les cils, les sourcils et les ongles.</li>
+ 
+             </ul>
+ 
+             
+           </div>
+         </div>
+
+         <div class="horizontal-line"></div>
+
+       <div class="tab-container">
+         <div class="tab" (click)="toggleTabContentFeatures()">
+           <span class="tab-title">Vertus</span>
+           
+           <i class="fas" [ngClass]="{'fa-chevron-down': showTabContentFeatures, 'fa-chevron-right': !showTabContentFeatures}"></i>
+         </div>
+         <div class="tab-content" *ngIf="showTabContentFeatures">
+ 
+             <p> - Bienfaits pour la peau: <br>
+              L'huile de ricin soigne les peaux très sèches mais aussi l'eczéma ou encore les brûlures, elle soulage les démangeaisons, les inflammations et les douleurs articulaires. Elle est hydratante, cicatrisante, antiseptique, régénérante et nettoyante<br>
+              
+             - Bienfaits pour les cheveux:<br>
+              Très nourrissante, elle hydrate le cuir chevelu et rend la chevelure plus brillante et plus souple. Mais ce n'est pas tout : elle accélère la pousse et la repousse et présente un meilleur moyen pour éliminer les pellicules.<br>
+              Utilisez-la en masque une fois par semaine en vous massant le cuir chevelu, vous verrez vite la différence, surtout si vous faites des colorations à répétition ou si votre crinière a été récemment exposée au soleil.<br>
+              
+             - Bienfaits pour les cils et les sourcils:<br>
+              Permet d'accélérer la pousse des cils et des sourcils tout en les hydratant. Attention lors de l'application utilisez un coton-tige afin d'éviter de vous en mettre dans les yeux.<br>
+              
+             - Bienfaits pour les ongles:<br>
+              Elle rend les ongles plus solides, moins cassants et qui s’abîment moins, elle les fait pousser et les adoucit.<br>
+              </p>
+         </div>
+       </div>
+
+
+       <div class="horizontal-line"></div>
+
+      
+
+       <div class="tab-container">
+         <div class="tab" (click)="toggleTabContentTechnicalOverview()">
+           <span class="tab-title">Composition</span>
+           <i class="fas" [ngClass]="{'fa-chevron-down': showTabContentTechnicalOverview, 'fa-chevron-right': !showTabContentTechnicalOverview}"></i>
+         </div>
+         <div class="tab-content" *ngIf="showTabContentTechnicalOverview">
+            <p>Très riche en acides aminés et en vitamines A, B1, B2, B3, B6, B9, B12, C et E Calcium, phosphore, potassium, fer, sodium, chlore, manganèse, magnésium cuivre, chrome, zinc
+            </p>
+         </div>
+       </div>
+        
+
+ 
+
+<div class="horizontal-line"></div>
+     </div>
+
+    
+     
+
+   </div>
+   
+  </div>
+ </section> 
+ 
+ 
+     
+   
+       
+
+
+      <!--- ############ Footer Starts Here ################## -->
